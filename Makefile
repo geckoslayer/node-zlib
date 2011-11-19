@@ -6,10 +6,10 @@ clean:
 
 ifndef only
 test: build
-	@expresso -I lib test/*.test.js
+	@NODE_PATH=./lib:$NODE_PATH ./node_modules/.bin/expresso test/*.test.js
 else
 test: build
-	@expresso -I lib test/${only}.test.js
+	@NODE_PATH=./lib:$NODE_PATH ./node_modules/.bin/expresso test/${only}.test.js
 endif
 
 .PHONY: build clean test

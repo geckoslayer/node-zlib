@@ -5,7 +5,6 @@ from shutil import copy2 as copy
 
 TARGET = 'zlib_bindings'
 TARGET_FILE = '%s.node' % TARGET
-built = 'build/default/%s' % TARGET_FILE
 dest = 'lib/%s' % TARGET_FILE
 
 def set_options(opt):
@@ -34,5 +33,9 @@ def shutdown():
       if exists(TARGET_FILE):
         unlink(TARGET_FILE)
   else:
-    if exists(built):
-      copy(built, dest)
+      # node 0.4.x
+      if exists('build/default/%s' % TARGET_FILE):
+          copy('build/default/%s' % TARGET_FILE,dest)
+      # node 0.6.x
+      elif exists('build/Release/%s' % TARGET_FILE):
+          copy('build/Release/%s' % TARGET_FILE,dest)

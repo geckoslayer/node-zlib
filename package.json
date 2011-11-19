@@ -1,7 +1,7 @@
 {
-    "name": "zlib",
+    "name": "_zlib",
     "description": "Simple, synchronous deflate/inflate for buffers",
-    "version": "1.0.5",
+    "version": "2.0.0",
     "homepage": "https://github.com/kkaefer/node-zlib",
     "author": "Konstantin Käfer <kkaefer@gmail.com>",
     "repository": {
@@ -11,8 +11,11 @@
     "engines": {
         "node": ">=0.2.0"
     },
+    "devDependencies": {
+      "expresso": "~0.9.x"
+    },
     "licenses": [
         { "type": "BSD" }
     ],
-    "main": "./lib/zlib"
+    "main": "./lib/_zlib"
 }
