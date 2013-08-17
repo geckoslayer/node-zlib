@@ -13,7 +13,7 @@ def set_options(opt):
 def configure(conf):
   conf.check_tool("compiler_cxx")
   conf.check_tool("node_addon")
-  if not conf.check(lib="z", libpath=['/usr/local/lib'], uselib_store="ZLIB"):
+  if not conf.check(lib="libz", libpath=['/usr/lib'], uselib_store="ZLIB"):
     conf.fatal('Missing zlib');
 
   linkflags = []
